@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H Game Store</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1e3a1e;
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #2a5d2a;
+            padding: 15px;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        #searchBar {
+            margin-top: 10px;
+            padding: 10px;
+            width: 80%;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .app-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .app {
+            background-color: #3c763c;
+            width: 200px;
+            margin: 15px;
+            padding: 15px;
+            border-radius: 10px;
+            cursor: pointer;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        .app:hover {
+            transform: scale(1.05);
+        }
+
+        .app img {
+            width: 100px;
+            height: 100px;
+            border-radius: 10px;
+        }
+
+        .app h2 {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .app p {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>H Game Store</h1>
+        <input type="text" id="searchBar" placeholder="Buscar apps..." onkeyup="searchApps()">
+    </header>
+
+    <div class="app-container" id="appList">
+        <!-- Aplicaciones -->
+        <div class="app" onclick="redirectTo('https://play.google.com/store/apps/details?id=com.example')">
+            <img src="https://via.placeholder.com/100" alt="App 1">
+            <h2>Ejemplo App 1</h2>
+            <p>Descripción corta de la aplicación.</p>
+        </div>
+
+        <div class="app" onclick="redirectTo('https://play.google.com/store/apps/details?id=com.example2')">
+            <img src="https://via.placeholder.com/100" alt="App 2">
+            <h2>Ejemplo App 2</h2>
+            <p>Otra descripción de la aplicación.</p>
+        </div>
+    </div>
+
+    <script>
+        function searchApps() {
+            let input = document.getElementById("searchBar").value.toLowerCase();
+            let apps = document.getElementsByClassName("app");
+
+            for (let app of apps) {
+                let title = app.getElementsByTagName("h2")[0].innerText.toLowerCase();
+                app.style.display = title.includes(input) ? "block" : "none";
+            }
+        }
+
+        function redirectTo(url) {
+            window.location.href = url;
+        }
+    </script>
+
+</body>
+</html>
