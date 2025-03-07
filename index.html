@@ -40,9 +40,9 @@
 
         .app {
             background-color: #3c763c;
-            width: 200px;
+            width: 150px; /* Tamaño fijo */
             margin: 15px;
-            padding: 15px;
+            padding: 10px;
             border-radius: 10px;
             cursor: pointer;
             text-align: center;
@@ -56,16 +56,17 @@
         .app img {
             width: 100px;
             height: 100px;
-            border-radius: 10px;
+            border-radius: 20px;
+            object-fit: cover; /* Para que no se deforme */
         }
 
         .app h2 {
-            font-size: 18px;
-            margin: 10px 0;
+            font-size: 14px;
+            margin: 5px 0;
         }
 
         .app p {
-            font-size: 14px;
+            font-size: 12px;
             opacity: 0.8;
         }
     </style>
@@ -73,22 +74,22 @@
 <body>
 
     <header>
-        <h1>H Games Store</h1>
+        <h1>H Game Store</h1>
         <input type="text" id="searchBar" placeholder="Buscar apps..." onkeyup="searchApps()">
     </header>
 
     <div class="app-container" id="appList">
         <!-- Aplicaciones -->
         <div class="app" onclick="redirectTo('https://play.google.com/store/apps/details?id=com.example')">
-            <img src="https://raw.githubusercontent.com/TWiegertMC/h-game-store/refs/heads/main/capsule_616x353.jpg" alt="App 1">
-            <h2>Her New Memorys</h2>
-            <p>Her New Memory Mod APK es como adentrarse en un libro de cuentos en el que encuentras a una chica que no tiene recuerdos y tienes la opción de ayudarla a redescubrir su pasado o mantenerla a tu lado. Este juego combina elementos de cuidado, construcción de relaciones y resolución de misterios. La narrativa es conmovedora y se centra en forjar una conexión con la chica y ver cómo se desarrolla una historia de amor única a medida que aprendes sobre su historia.</p>
+            <img src="https://via.placeholder.com/100" alt="App 1">
+            <h2>Ejemplo App 1</h2>
+            <p>Descripción corta.</p>
         </div>
 
         <div class="app" onclick="redirectTo('https://play.google.com/store/apps/details?id=com.example2')">
             <img src="https://via.placeholder.com/100" alt="App 2">
             <h2>Ejemplo App 2</h2>
-            <p>Otra descripción de la aplicación.</p>
+            <p>Otra descripción.</p>
         </div>
     </div>
 
